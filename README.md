@@ -205,7 +205,7 @@ python main.py \
     --config.experiment_kwargs.config.checkpointing.restore_path=$MODEL_PATH
 ```
 
-### ETL (Appendix)
+### ETL (Appendix G)
 
 `celeba_logits`, `celeba_noimg`, and `celeba` all have the same `x` inputs (logits), but different auxiliary data:
 
