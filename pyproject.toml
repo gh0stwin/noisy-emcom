@@ -1,0 +1,89 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]  # poetry >= 1.2
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "noisy_emcom"
+version = "0.1.0"
+description = "Noisy Emergent Communication"
+authors = ["Fábio Vital <fabiovital@tecnico.ulisboa.pt>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+absl-py = "1.2.0"
+chex = "0.1.4"
+dm-haiku = "0.0.7"
+dm-tree = "0.1.7"
+editdistance = "0.6.0"
+gdown = "4.5.1"
+jaxline = { git = "https://github.com/gh0stwin/jaxline.git", rev = "5e1c41f" }
+kaleido = "0.2.1"
+matplotlib = "3.5.3"
+ml-collections = "0.1.1"
+nbformat = "5.7.0"
+numpy = "1.22.4"
+optax = "0.1.3"
+pandas = "1.5.2"
+plotly = "5.11.0"
+rlax = "0.1.4"
+scipy = "1.9.0"
+tensorflow-gpu = { url = "https://files.pythonhosted.org/packages/1b/3e/6cefc6514014fa0ea88eb726ae3cf098f5a092b23d9e55488bf50e2b4d88/tensorflow_gpu-2.9.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl" }
+tensorflow-datasets = "4.6.0"
+tensorboard = "2.9.1"
+clearml = "1.9.1"
+jinja2 = "3.1.2"
+jaxlib = {url = "https://storage.googleapis.com/jax-releases/cuda11/jaxlib-0.3.15+cuda11.cudnn82-cp310-none-manylinux2014_x86_64.whl"}
+jax = "0.3.15"
+
+[tool.poetry.group.dev.dependencies]
+setuptools = "67.8.0"
+mypy = "1.10.1"
+autopep8 = "2.2.0"
+pylint = "2.14.5"
+black = "23.12.1"
+flake8 = "6.1.0"
+ipykernel = "6.15.1"
+isort = "5.10.1"
+pre-commit = "2.20.0"
+pytest = "7.1.2"
+
+[tool.black]
+# Use the more relaxed max line length permitted in PEP8.
+line-length = 88
+target-version = ["py310"]
+include = '\.pyi?$'
+exclude = '''
+^/(
+  (
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | venv
+    | _build
+    | buck-out
+    | build
+    | dist
+    | \.tmp
+    | data
+    | node_modules
+  )/
+  | choose_config.py
+)
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+force_sort_within_sections = true
+# Inform isort of paths to import names that should be considered part of the "First Party" group.
+src_paths = ["src/noisy_emcom"]
+skip_gitignore = true
+# If you need to skip/exclude folders, consider using skip_glob as that will allow the
+# isort defaults for skip to remain without the need to duplicate them.
+skip_glob = ["data/*", ".venv/*"]
+
+[tool.pylint]
+good-names = ["d", "h", "i", "j", "k", "n", "w", "x", "y", "z", "ex", "el", "ds", "df", "lg", "ys"]
