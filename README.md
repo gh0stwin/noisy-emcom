@@ -64,7 +64,7 @@ python main.py \
 
 ### Test
 
-#### Channel
+#### Channel (Section 3.2)
 
 ##### LG (S)
 
@@ -109,7 +109,7 @@ python main.py \
     --config.experiment_kwargs.config.checkpointing.restore_path=$MODEL_PATH
 ```
 
-#### Message
+#### Message (Section 3.3)
 
 ##### LG (S)
 
@@ -154,7 +154,7 @@ python main.py \
     --config.experiment_kwargs.config.checkpointing.restore_path=$MODEL_PATH
 ```
 
-#### Inputs
+#### Inputs (Section 3.4)
 
 ##### LG (S)
 
@@ -205,7 +205,7 @@ python main.py \
     --config.experiment_kwargs.config.checkpointing.restore_path=$MODEL_PATH
 ```
 
-### ETL
+### ETL (Appendix)
 
 `celeba_logits`, `celeba_noimg`, and `celeba` all have the same `x` inputs (logits), but different auxiliary data:
 
